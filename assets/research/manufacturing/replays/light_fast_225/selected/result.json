@@ -1,0 +1,9 @@
+{
+  "frames": 387,
+  "bodies": 12,
+  "fps": 50,
+  "duration": 7.72,
+  "passed": true,
+  "transfer_s": 0.225,
+  "source_first_timestamp_s": 0.01
+}

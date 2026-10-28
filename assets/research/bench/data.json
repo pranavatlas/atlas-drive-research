@@ -1,0 +1,14 @@
+{
+  "schema": "atlas-drive-selected-bench-example-v1",
+  "points": 15,
+  "examples": [
+    {
+      "label": "Original inputs",
+      "current_error_pct": 16.2
+    },
+    {
+      "label": "Recorded calibration",
+      "current_error_pct": 3.7
+    }
+  ]
+}
