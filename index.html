@@ -4,8 +4,8 @@
   <meta name="atlas-drive-api" content="https://theenergynerd--atlas-drive-customer-calculator-api.us-east.modal.run" />
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Atlas Drive — The actuator your robot needs</title>
-  <meta name="description" content="Atlas Drive helps teams design the motor and motion together before building the hardware. Explore actuator choices and learned motion in recorded simulations." />
+  <title>Atlas Drive — Custom actuators for every task</title>
+  <meta name="description" content="Atlas designs and builds motors and actuators. Atlas Drive lets your team design the best motor for your task before you order a single part." />
   <meta name="theme-color" content="#181818" />
   <link rel="icon" href="assets/research/brand/atlas.svg" />
   <link rel="stylesheet" href="assets/research/manufacturing.css" />
@@ -26,43 +26,44 @@
   <main id="main">
     <section class="hero">
       <p class="eyebrow">Atlas Drive <span>Selected examples</span></p>
-      <h1>Define the task,<br /><span>and we’ll build the actuator.</span></h1>
-      <div class="hero-bottom"><p>Atlas designs and manufactures motors and actuators. Atlas Drive helps teams design the motor and motion together before building the hardware.</p><a class="text-link" href="#workload">Start with the work <span aria-hidden="true">↓</span></a></div>
+      <h1>Custom actuators<br /><span>for every task.</span></h1>
+      <div class="hero-bottom"><p>Atlas designs and builds motors and actuators. Atlas Drive lets your team design the best motor for your task before you order a single part. Here’s how it works.</p><a class="text-link" href="#workload">Start with the work <span aria-hidden="true">↓</span></a></div>
     </section>
 
     <section id="workload" class="workload-section">
-      <div class="section-heading"><p class="eyebrow">01 / Design around the job</p><h2>Change the job and see what the motors can do.</h2><p>Move more weight, demand a faster transfer, or reach farther. Compare three actuator designs on the same task.</p></div>
+      <div class="section-heading"><p class="eyebrow">01 / Design for the job</p><h2>Design for the job at hand.</h2><p>To show off what Atlas Drive can do, we made a practice simulation for you to try. Here, you’ll compare how three actuator designs handle the same task. Try adding a payload, shortening the transfer time, or extending the reach to see how each design responds!</p></div>
       <nav class="demo-jumps" aria-label="Motor performance demonstrations"><a href="#workload" aria-current="location">Arm / payload &amp; timing</a><a href="#course-example">Robot Olympics / drive changes ↓</a><a href="#your-workload">Try your own torque &amp; speed ↓</a></nav>
       <div id="task-host" class="task-host"></div>
     </section>
 
     <section id="course-example" class="course-section">
-      <div class="section-heading"><p class="eyebrow">02 / Robot Olympics</p><h2>Change the drive and watch the course.</h2><p>Stairs, gaps, rubble and a lateral push. Explore four recorded courses and see how winding, gearing, current and mass change what ANYmal can finish.</p></div>
+      <div class="section-heading"><p class="eyebrow">02 / Robot Olympics</p><h2>Compete in the Robot Olympics.</h2><p>The ANYmal quadruped can take on stairs, rubble, gaps, and even a big shove from the side. Here, you’ll get to pick one of four recorded courses and compare changes to the winding, gearing, current, or mass to see how far your ANYmal can get.</p></div>
       <div id="olympics-host"></div>
     </section>
 
     <section id="learned-motion" class="bench-section">
-      <div class="section-heading"><p class="eyebrow">03 / Learn the motion</p><h2>The motor matters, but so does how you move.</h2><p>A decision tree trained on simulated outcomes learned which withdrawal motion to use from the robot and object state.</p></div>
-      <div class="bench-grid"><div><p class="big-number">24.2<span>% lower</span></p><h3>Worst object speed during withdrawal.</h3><p class="small">0.05978 → 0.04530 m/s across 64 varied loaded cases, compared with the best tested fixed curve.</p></div><div><p class="eyebrow">A specific training advantage</p><h3>Both completed 80 / 80 motions.</h3><p>With the same actuator, gains and timing, the learned selector improved this motion metric. Modeled copper energy was essentially unchanged.</p><p class="small">The actuator studies above test hardware choices. This study adds learned motion selection. Together, they support designing both around the job before committing to a build.</p></div></div>
+      <div class="section-heading"><p class="eyebrow">03 / Motion outcome</p><h2>Your motion outcome matters just as much as your actuator design.</h2><p>Even though the design of an actuator can dramatically change the performance of a robot, the same actuator, with the same gains and timing, can still perform differently based on its “motion outcome.”</p></div>
+      <p class="motion-intro">One example of what we call “motion outcome” is the following. When we built Atlas Drive, we trained a decision tree to pick a withdrawal motion for a given robot and object state. Our decision tree reduced the worst observed object speed by 24.2% when we tested it across 64 loaded cases. The worst observed speed fell from 0.05978 to 0.04530 m/s.</p>
+      <div class="bench-grid"><div><p class="big-number">24.2<span>% lower</span></p><h3>Worst object speed during withdrawal.</h3><p class="small">0.05978 → 0.04530 m/s across 64 varied loaded cases, compared with the best tested fixed curve.</p></div><div><p class="eyebrow">A specific training advantage</p><h3>Both completed 80 / 80 motions.</h3><p>With the same actuator, gains and timing, the learned selector improved this motion metric. Modeled copper energy was essentially unchanged.</p><p class="small">This is still a simulation result that hasn’t been shown to carry over to hardware yet, which is why we are so bullish on collecting real motor data to improve Atlas Drive.</p></div></div>
       <div id="learned-motion-host"></div>
       <p class="caption">Fresh simulation; secondary result from a tree frozen before testing. The 64 varied cases reuse eight loaded geometries across eight engineering blocks; another 16 cases check retention. The primary neural candidate completed 79/80 and failed its gates. This comparison does not isolate a benefit from motor-model fidelity or establish hardware transfer.</p>
     </section>
 
     <section id="hardware-evidence" class="bench-section">
-      <div class="section-heading"><p class="eyebrow">04 / Learn from real motors</p><h2>When you have better inputs, you reach a closer model.</h2><p>In one archived motor comparison, using recorded calibration brought predicted current closer to the measured result.</p></div>
-      <div class="bench-grid"><div><p class="eyebrow">Selected bench example</p><p class="big-number">16.2<span>% → </span>3.7<span>%</span></p><h3>Mean absolute current prediction error.</h3><p class="small">Across the same 15 recorded load points. Both summaries include the voltage-limited points.</p></div><div><svg id="bench-chart" viewBox="0 0 680 230" role="img" aria-label="Mean absolute current prediction error: original inputs 16.2 percent; recorded calibration 3.7 percent"></svg><p class="small" id="bench-note">A retrospective calibration comparison. The records do not establish that the calibration and load test used the same physical unit; this is not independent product validation.</p></div></div>
+      <div class="section-heading"><p class="eyebrow">04 / Real motor data</p><h2>Atlas Drive can learn from real motor data.</h2><p>With better inputs, Atlas Drive can make more accurate predictions. In one archived motor comparison, recorded calibration data brought the predicted current much closer to our measurements.</p></div>
+      <div class="bench-grid"><div><p class="eyebrow">Selected bench example</p><p class="big-number">16.2<span>% → </span>3.7<span>%</span></p><h3>Mean absolute current prediction error.</h3><p class="small">The lower the prediction error, the better! We used the same 15 recorded load points, and both figures include the voltage-limited points.</p></div><div><svg id="bench-chart" viewBox="0 0 680 230" role="img" aria-label="Mean absolute current prediction error: original inputs 16.2 percent; recorded calibration 3.7 percent"></svg><p class="small" id="bench-note">A retrospective calibration comparison. The records do not establish that the calibration and load test used the same physical unit; this is not independent product validation.</p></div></div>
       <p class="caption">These examples draw on a broader internal library of motor tests and robot-task evaluations. Detailed calibration records and design methods stay inside Atlas.</p>
     </section>
 
     <section id="your-workload" class="intake-section">
-      <div class="section-heading"><p class="eyebrow">Your robot / Your requirements</p><h2>What do you need at the joint?</h2><p>Define the torque and speed. Atlas Drive searches winding and gearing choices, proposes an actuator, and shows the power it needs.</p></div>
+      <div class="section-heading"><p class="eyebrow">Your robot / Your requirements</p><h2>Your robots should be customized to your requirements.</h2><p>With Atlas Drive, you can get a custom actuator proposal—including the power it needs—for your joint by entering a torque and a speed. Drive searches multiple winding and gear options to propose the best solution within the designs compared.</p></div>
       <div class="intake-grid">
         <form id="drive-form">
           <div class="drive-presets" role="group" aria-label="Example requirements"><button type="button" data-drive-preset="arm">Arm joint</button><button type="button" data-drive-preset="fast">Fast rotation</button><button type="button" data-drive-preset="heavy">Harder demand</button></div>
           <p class="small">Examples use a 24 V supply and a 15 A peak current limit.</p>
           <div class="drive-fields">
-            <div><label for="drive-torque">Output torque · Nm</label><input id="drive-torque" type="number" min="0.1" max="500" value="30" step="any" required /><p class="small">The turning force the joint needs.</p></div>
-            <div><label for="drive-speed">Output speed · rpm</label><input id="drive-speed" type="number" min="0" max="500" value="30" step="any" required /><p class="small">Joint speed, after the gearbox.</p></div>
+            <div><label for="drive-torque">Output torque · Nm</label><input id="drive-torque" type="number" min="0.1" max="500" value="30" step="any" required /><p class="small">How hard the joint needs to turn.</p></div>
+            <div><label for="drive-speed">Output speed · rpm</label><input id="drive-speed" type="number" min="0" max="500" value="30" step="any" required /><p class="small">The joint’s speed, after the gearbox.</p></div>
             <div><label for="drive-duration">Time under this load · seconds</label><input id="drive-duration" type="number" min="0.1" max="120" value="10" step="any" required /></div>
           </div>
           <details class="drive-supply"><summary>Power supply &amp; drive limits</summary><div class="drive-fields"><div><label for="drive-voltage">Supply · V</label><input id="drive-voltage" type="number" min="6" max="96" value="24" step="any" required /></div><div><label for="drive-current">Peak phase current · A</label><input id="drive-current" type="number" min="1" max="40" value="15" step="any" required /></div></div></details>
@@ -82,19 +83,20 @@
         </div>
       </div>
       <div id="drive-hardware-host" class="drive-hardware-host" hidden></div>
-      <p class="caption">A bounded electrical design search at 25°C. Coupled winding and gearing changes are evaluated under fixed package assumptions. Time under load scales copper heat; dimensions, cooling, mechanical speed limits and production readiness still need Atlas engineering.</p>
+      <p class="caption">This is a limited electrical search at 25°C, with winding and gearing changing together inside a fixed package assumption. More time under load means more modeled copper heat; temperature remains fixed in this calculation. Atlas engineering still has to work out the dimensions, cooling, mechanical speed limits, and production readiness for any submitted design.</p>
     </section>
 
     <section id="delivery" class="delivery-section">
-      <div class="section-heading"><p class="eyebrow">05 / From task to actuator</p><h2>You specify the work.<br /><span>Atlas handles the motor.</span></h2></div>
-      <ol class="delivery-steps"><li><span class="step-no">01</span><h3>Bring the workload.</h3><p>Your robot, motions, payload, space, power and duty cycle.</p></li><li><span class="step-no">02</span><h3>Review the recommendation.</h3><p>Task performance, operating limits and the tradeoffs that matter to your product.</p></li><li><span class="step-no">03</span><h3>Build with Atlas.</h3><p>Atlas handles detailed actuator engineering and manufacturing. Your team gets hardware and its controls model.</p></li></ol>
-      <div class="delivery-close"><p>Use the open-source model runtime in your robotics stack. When you need the actuator built, bring Atlas the job—we handle the motor design and manufacturing.</p><div class="delivery-links"><a class="primary" href="https://github.com/pranavatlas/atlas-drive">Use Atlas Drive on GitHub ↗</a><a class="primary" href="https://atlasmotion.com/contact">Manufacture with Atlas ↗</a></div></div>
+      <div class="section-heading"><p class="eyebrow">05 / Build with Atlas</p><h2>Building custom actuators<br /><span>from your unique tasks.</span></h2></div>
+      <p>Making custom actuators with Atlas Drive has three steps.</p>
+      <ol class="delivery-steps"><li><span class="step-no">01</span><h3>Bring the workload.</h3><p>Bring your robot, with information about its motions, payload, space, power, and duty cycle.</p></li><li><span class="step-no">02</span><h3>Review the recommendation.</h3><p>Atlas will generate specifications for you to review: how your design performs on the task, where its limits are, and the tradeoffs that matter for your product.</p></li><li><span class="step-no">03</span><h3>Build with Atlas.</h3><p>Atlas will do the detailed actuator engineering and manufacturing for you. You’ll get the hardware along with its controls model.</p></li></ol>
+      <div class="delivery-close"><p>Our model runtime is open source, so you can drop it into your robotics stack today. When it’s time to build an actuator, bring the job to Atlas and we’ll manufacture the motor.</p><div class="delivery-links"><a class="primary" href="https://github.com/pranavatlas/atlas-drive">Use Atlas Drive on GitHub ↗</a><a class="primary" href="https://atlasmotion.com/contact">Manufacture with Atlas ↗</a></div></div>
     </section>
 
     <section id="methods" class="methods">
-      <details><summary>About these examples <span aria-hidden="true">+</span></summary><div class="notes-grid">
-        <div><h3>What the arm result shows.</h3><p>Recorded arm trials compare three hypothetical actuator designs with the same controller. Payload, timing and reach change which designs complete the task. Some jobs remain out of reach. These are simulated retrofits, not qualified hardware.</p></div>
-        <div><h3>Where training and bench evidence fit.</h3><p>The trained selector supports a specific learning benefit over fixed motion curves in simulation. The separate bench comparison supports measured calibration. Neither isolates a unique motor-model training advantage or validates the arm retrofit on hardware. Full records, including failed gates, stay internal.</p></div>
+      <details><summary>Example appendix <span aria-hidden="true">+</span></summary><div class="notes-grid">
+        <div><h3>What the arm result shows.</h3><p>In our recorded arm trials, three hypothetical actuator designs ran the same controller. Payload, timing, and reach determine which designs can finish the task, although some jobs are out of reach for all of them. These are simulated retrofits rather than qualified hardware.</p></div>
+        <div><h3>Where training and bench evidence fit.</h3><p>In our simulations, the trained selector shows a specific benefit over fixed motion curves. Our separate bench comparison shows an improvement from measured calibration. Neither proves a training advantage unique to our motor model or validates an arm retrofit on real hardware. We keep the full records internal, including failed gates.</p></div>
       </div></details>
     </section>
   </main>
